@@ -1,0 +1,16 @@
+<h2>{{ Contacts }}</h2>
+<div>
+  <ul class="list-group" >
+    <li *ngFor="let contact of contacts" class="list-group-item">
+      <div class="row">
+        <div class="col-md-9">{{ contact.firstName }} {{ contact.lastName }}</div>
+        <div class="col-md-3">
+          <a class="btn btn-default btn-sm" (click) = "setGetContact(contact)">Détails</a>
+          <a class="btn btn-primary btn-sm" (click) = "setEditedContact(contact)">Modifier</a>
+          <a (click) = "deleteContact(contact._id)" class="btn btn-danger btn-sm">Supprimer</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+

@@ -1,0 +1,13 @@
+<h1>Tp Angular</h1>
+
+<contacts *ngIf="!editedContact && !getContact">
+</contacts>
+
+<contact-create *ngIf="!editedContact && !getContact">
+</contact-create>
+
+<contact-edit *ngIf="editedContact" [editedContact]="editedContact">
+</contact-edit>
+
+<contact-get *ngIf="getContact" [getContact]="getContact">
+</contact-get>

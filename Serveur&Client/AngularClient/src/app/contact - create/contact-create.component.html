@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Ajouter un contact</h2>
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <div class="form-group">
+      <label for="firstName">Prénom</label>
+      <input type="text"  class="form-control" id="firstName"
+             required
+             [(ngModel)]="contact.firstName" name="firstName"
+             #firstName="ngModel">
+      <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+        Le prénom du contact est requis.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Nom de famille</label>
+      <input type="text"  class="form-control" id="lastName"
+             required
+             [(ngModel)]="contact.lastName" name="lastName"
+             #lastName="ngModel">
+      <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
+        Le nom de famille du contact est requis.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text"  class="form-control" id="description"
+             [(ngModel)]="contact.description" name="description">
+    </div>
+    <button type="submit" class="btn btn-default" [disabled]="!contactForm.form.valid">Ajouter</button>
+  </form>
+</div>
